@@ -2,77 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Enfuego’25 - Ignite the Fire Within</title>
+  <title>Enfuego'25 - Ignite the Fire Within</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* Page background using your uploaded cartoon image */
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #1a1a1a;
-      color: #fff;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #ffffff;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.75);
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 600px;
+      width: 90%;
       text-align: center;
-      padding: 50px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
 
     h1 {
-      font-size: 3em;
-      color: #ff6b00;
+      font-size: 2.8em;
+      color: #ff9933;
+      margin-bottom: 10px;
+    }
+
+    .subheading {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      color: #f2f2f2;
     }
 
     .countdown {
-      font-size: 2em;
+      font-size: 1.8em;
       margin: 20px 0;
-    }
-
-    .event-details {
-      font-size: 1.2em;
-      margin-bottom: 30px;
+      color: #00ffcc;
     }
 
     .qr-section {
-      margin: 40px 0;
+      margin: 30px 0;
     }
 
     .qr-section img {
-      width: 280px;
-      height: auto;
-      border: 5px solid #fff;
-      border-radius: 8px;
+      width: 250px;
+      border: 4px solid #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(255,255,255,0.3);
     }
 
     .confirm-button {
-      margin-top: 20px;
+      margin-top: 25px;
       background-color: #00cc66;
       border: none;
-      padding: 15px 30px;
-      font-size: 1em;
+      padding: 15px 25px;
+      font-size: 1.1em;
       color: white;
       cursor: pointer;
       border-radius: 8px;
+      transition: background 0.3s ease;
     }
 
     .confirm-button:hover {
       background-color: #00994d;
     }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+      .countdown {
+        font-size: 1.3em;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Enfuego'25</h1>
-  <p class="event-details">Ignite the Fire Within<br>October 28 – November 01, 2025</p>
 
-  <div class="countdown" id="countdown">Loading countdown...</div>
+  <div class="container">
+    <h1>Enfuego'25</h1>
+    <p class="subheading">Ignite the Fire Within<br>October 28 – November 01, 2025</p>
 
-  <div class="qr-section">
-    <h2>Scan & Pay to Register</h2>
-    <p>Scan this QR using any UPI App (PhonePe, GPay, Paytm, etc.)</p>
-    
-    <!-- ✅ Your QR code image -->
-    <img src="WhatsApp%20Image%202025-06-18%20at%2014.13.11_7cba11fb.jpg" alt="PhonePe QR Code">
-    
-    <br>
-    <button class="confirm-button" onclick="goToWhatsApp()">I’ve Paid – Join WhatsApp Group</button>
+    <div class="countdown" id="countdown">Loading countdown...</div>
+
+    <div class="qr-section">
+      <h2>Scan & Pay to Register</h2>
+      <p>Scan this QR using any UPI App (PhonePe, GPay, Paytm, etc.)</p>
+
+      <!-- ✅ QR Code Image -->
+      <img src="Untitled design.jpg" alt="PhonePe QR Code">
+      
+      <br>
+      <button class="confirm-button" onclick="goToWhatsApp()">I’ve Paid – Join WhatsApp Group</button>
+    </div>
   </div>
 
   <script>
-    // COUNTDOWN TIMER
+    // Countdown logic
     const eventDate = new Date("October 28, 2025 00:00:00").getTime();
     const countdownElement = document.getElementById("countdown");
 
@@ -93,11 +126,12 @@
       countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }, 1000);
 
-    // REDIRECT TO WHATSAPP
+    // WhatsApp redirection
     function goToWhatsApp() {
-      alert("Thank you for registering! Redirecting to WhatsApp group...");
+      alert("Redirecting to WhatsApp group...");
       window.location.href = "https://chat.whatsapp.com/ITt4OX6ZcRy2uYqB5tbGvP";
     }
   </script>
+
 </body>
 </html>
